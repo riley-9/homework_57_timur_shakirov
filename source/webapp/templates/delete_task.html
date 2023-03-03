@@ -3,18 +3,18 @@
 {% endblock %}
 {% block content %}
 
-    <form action="" method='post'>
-        {% csrf_token %}
-        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title"> Вы уверены что хотите удалить эту задачу?</h5>
-                    <input class="btn btn-danger mt-2" type="submit" value="Удалить">
+<form action="" method='post'>
+    {% csrf_token %}
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title"> Вы уверены что хотите удалить эту задачу?</h5>
+                <input class="btn btn-danger mt-2" type="submit" value="Удалить">
 
-                    <a class='btn btn-primary mt-2' href="{% url 'index' %}">Отмена</a>
-                </div>
+                <a class='btn btn-primary mt-2' href="{% url 'index' %}">Отмена</a>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 
 {% endblock content %}

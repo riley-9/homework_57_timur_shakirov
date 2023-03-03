@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <form action="{% url 'entry_update' entry.id %}" method='post'>
-        {% include 'partial/entry_form.html' with button_text='Обновить' %}
-    </form>
+<form action="{% url 'entry_update' entry.id %}" method='post'>
+    {% include 'partial/entry_form.html' with button_text='Обновить' %}
+</form>
 {% endblock content %}
