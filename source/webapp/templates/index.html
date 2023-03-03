@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block nav %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <form class="d-flex" action="" method='get'>
+        <input class="form-control me-2" type="text" placeholder="Найти гостя" aria-label="Search" name="author">
+        <button class="btn btn-outline-success" type="submit">Найти</button>
+    </form>
+
+{% endblock nav %}
+
+
+
+{% block content %}
+    {% for entry in entries %}
+        <div class="card text-center">
+        <span>
+            <br>
+            <a href="{% url 'entry_update' entry.id %}"> <img src="static/images/edit.png"
+                                                              alt="edit"> Редактировать</i> </a>      |     <a
+                href="{% url 'entry_delete' entry.id %}"><i class="fas fa-eraser"></i> Удалить <img
+                src="static/images/file.png"
+                alt="delete"></a>
+        </span>
+
+
+            <div class="card-body">
+                <h5 class="card-title">{{ entry.author }} ({{ entry.email }})</h5>
+                <br>
+                <p class="card-text">{{ entry.text }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock content %}
