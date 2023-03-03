@@ -1,10 +1,12 @@
 from django.urls import path
 
-from source.webapp.views.views import index_view, entry_create_view, entry_update_view, entry_delete_view
+from source.webapp.views.views import TaskView, CreateTaskView, UpdateView, DeleteView, ConfirmDeleteView
 
 urlpatterns = [
-    path('', index_view, name='index'),
-    path('create/', entry_create_view, name='entry_create'),
-    path('<int:pk>/update/', entry_update_view, name='entry_update'),
-    path('<int:pk>/delete/', entry_delete_view, name='entry_delete'),
+    path('', TaskView.as_view(), name='index'),
+    path('task/create/', CreateTaskView.as_view(), name='create_task'),
+    path('task/<pk>/update/',UpdateView.as_view() , name='update_task'),
+    path('task/<pk>/delete/', ConfirmDeleteView.as_view(), name='delete_task'),
+    path('task/<pk>/', TaskView.as_view(), name='show_task'),
+    path('task/<pk>/confirm-delete/', ConfirmDeleteView.as_view(permanent=True), name='confirm_delete_task')
 ]
