@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .models import Entry
+from source.webapp.models.types_models import Entry
 from source.webapp.forms.forms import EntryForm
 
 
