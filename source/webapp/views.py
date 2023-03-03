@@ -15,7 +15,7 @@ def index_view(request):
 def entry_create_view(request):
     if request.method == 'GET':
         form = EntryForm()
-        return render(request, 'entry_create.html', context={'form': form})
+        return render(request, 'create_task.html', context={'form': form})
     elif request.method == 'POST':
         form = EntryForm(data=request.POST)
         if form.is_valid():
@@ -25,7 +25,7 @@ def entry_create_view(request):
                 text=form.cleaned_data.get('text')
             )
             return redirect('index')
-        return render(request, 'entry_create.html', context={'form': form})
+        return render(request, 'create_task.html', context={'form': form})
 
 
 def entry_update_view(request, pk):
@@ -37,7 +37,7 @@ def entry_update_view(request, pk):
             'email': entry.email,
             'text': entry.text,
         })
-        return render(request, 'entry_update.html', context={'form': form, 'entry': entry})
+        return render(request, 'update_task.html', context={'form': form, 'entry': entry})
     elif request.method == 'POST':
         form = EntryForm(data=request.POST)
         if form.is_valid():
@@ -52,7 +52,7 @@ def entry_update_view(request, pk):
 def entry_delete_view(request, pk):
     entry = get_object_or_404(Entry, id=pk)
     if request.method == 'GET':
-        return render(request, 'entry_delete.html', context={'entry': entry})
+        return render(request, 'delete_task.html', context={'entry': entry})
     elif request.method == 'POST':
         entry.delete()
         return redirect('index')
