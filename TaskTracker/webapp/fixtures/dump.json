@@ -1,0 +1,108 @@
+[
+  {
+    "model": "webapp.type",
+    "pk": 1,
+    "fields": {
+      "name": "Bug"
+    }
+  },
+  {
+    "model": "webapp.type",
+    "pk": 2,
+    "fields": {
+      "name": "Task"
+    }
+  },
+  {
+    "model": "webapp.type",
+    "pk": 3,
+    "fields": {
+      "name": "Enhancement"
+    }
+  },
+  {
+    "model": "webapp.state",
+    "pk": 1,
+    "fields": {
+      "name": "New"
+    }
+  },
+  {
+    "model": "webapp.state",
+    "pk": 2,
+    "fields": {
+      "name": "In Progress"
+    }
+  },
+  {
+    "model": "webapp.state",
+    "pk": 3,
+    "fields": {
+      "name": "Done"
+    }
+  },
+  {
+    "model": "webapp.task",
+    "pk": 1,
+    "fields": {
+      "summary": "Task 1",
+      "description": "Description",
+      "created_date": "2023-03-05T14:50:23.612Z",
+      "updated_date": "2023-03-05T15:42:45.784Z",
+      "state": [
+        3
+      ],
+      "type": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "webapp.task",
+    "pk": 2,
+    "fields": {
+      "summary": "Task 2",
+      "description": "Description",
+      "created_date": "2023-03-05T14:50:38.868Z",
+      "updated_date": "2023-03-05T14:50:38.868Z",
+      "state": [
+        2
+      ],
+      "type": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "webapp.task",
+    "pk": 3,
+    "fields": {
+      "summary": "Task 3",
+      "description": "",
+      "created_date": "2023-03-05T14:50:48.780Z",
+      "updated_date": "2023-03-05T14:50:48.780Z",
+      "state": [
+        3
+      ],
+      "type": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "webapp.task",
+    "pk": 4,
+    "fields": {
+      "summary": "Task 4",
+      "description": "",
+      "created_date": "2023-03-05T14:51:08.730Z",
+      "updated_date": "2023-03-05T14:51:08.730Z",
+      "state": [
+        2
+      ],
+      "type": [
+        1
+      ]
+    }
+  }
+]

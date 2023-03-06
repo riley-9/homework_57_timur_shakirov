@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Task {{ task.title }} {% endblock %}
+{% block content %}
+<div class="index">
+    <h1 class="">Task {{ task.title }}</h1>
+    <div class="" id="" title="task-{{task.pk}}">
+        <h5 class="">{{ task.summary}}</h5>
+        <p class="">{{ task.description}}</p>
+        <p class=""><b>Status:</b> {% for state in task.state.all %}{{ state }}{% endfor %}</p>
+        <p class=""><b>Type:</b> {% for type in task.type.all %}{{ type }}{% endfor %}</p>
+        <p class=""><b>Created at:</b> {{ task.created_date }}</p>
+        <p class=""><b>Updated at:</b> {{ task.updated_date }}</p>
+        <a href="{% url 'update_task' task.pk %}" class="">Edit task</a>
+    </div>
+
+</div>
+{% endblock %}
